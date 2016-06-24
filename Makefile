@@ -3,7 +3,7 @@ IMAGE_TAG := latest
 IMAGE := $(IMAGE_REPO):$(IMAGE_TAG)
 
 # Default cachegrind output dir
-PERF_DIR := $(shell readlink -m perf)
+PERF_DIR := perf
 
 # Default listening port
 PORT := 8090
@@ -21,5 +21,5 @@ webgrind: container
 		-it \
 		--rm \
 		-p $(PORT):80 \
-		-v $(PERF_DIR):/cachegrind \
+		-v $(shell readlink -m $(PERF_DIR)):/cachegrind \
 		$(IMAGE)
