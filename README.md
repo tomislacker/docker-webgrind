@@ -8,8 +8,10 @@ This is a containerized version of the
 1. Put your `cachegrind.out.*` files into `perf/`
 1. Run `make webgrind`
 
-   This builds the container locally on your machine and then launches,
-   listening on port `8090/tcp`.
+   This pulls the container from the
+   [Docker Hub](https://hub.docker.com/r/tomislacker/webgrind/)
+   *(if you don't have it locally)*, launches the container, and listens on
+   `8090/tcp`.
 
 ### Advanced
 If you don't want to move your cachegrind files around, you may also link

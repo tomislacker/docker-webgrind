@@ -1,4 +1,4 @@
-IMAGE_REPO := webgrind
+IMAGE_REPO := tomislacker/webgrind
 IMAGE_TAG := latest
 IMAGE := $(IMAGE_REPO):$(IMAGE_TAG)
 
@@ -16,7 +16,7 @@ container:
 		.
 
 .PHONY: webgrind
-webgrind: container
+webgrind:
 	docker run \
 		-it \
 		--rm \
