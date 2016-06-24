@@ -17,3 +17,6 @@ RUN mv /app/webgrind-master /app/webgrind
 
 # Configure webgrind
 RUN sed -i 's/\(static\s\+$profilerDir\).*/\1 = "\/cachegrind";/g' /app/webgrind/config.php
+
+# Ensure python is linked
+RUN ln -sf /usr/bin/python3 /usr/bin/python || true
